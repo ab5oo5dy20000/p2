@@ -1,0 +1,116 @@
+<style>
+  .container {
+    width: 100%;
+    padding: 100px 5vw;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.6rem;
+    font-weight: 900;
+    margin-bottom: 60px;
+    color: #ffffff;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: space-between;
+  }
+
+  .card {
+    flex: 1 1 calc(20% - 24px);
+    background: linear-gradient(145deg, #1f1b37, #19162e);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 14px 34px rgba(168, 85, 247, 0.3);
+  }
+
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #a855f7;
+    font-weight: 900;
+    line-height: 1.4;
+  }
+
+  .card p {
+    font-size: 1.05rem;
+    color: #e2e8f0;
+    line-height: 1.8;
+    margin-bottom: 25px;
+  }
+
+  .card button {
+    padding: 12px 26px;
+    font-size: 1rem;
+    font-weight: 700;
+    background: #a855f7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .card button:hover {
+    background: #7e22ce;
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 1200px) {
+    .card {
+      flex: 1 1 calc(45% - 24px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      flex: 1 1 100%;
+    }
+  }
+</style>
+
+<div class="container">
+  <h2 class="section-title">🚀 خدمات المنصة</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>🔗 تحليل رابط المنتج</h3>
+      <p>ألصق رابط المنتج من أي متجر وسنقوم بتحليله تلقائيًا.</p>
+      <button>جرّب الآن</button>
+    </div>
+    <div class="card">
+      <h3>💸 مقارنة الأسعار</h3>
+      <p>نقارن بين المتاجر الكبرى ونظهر أرخص سعر لك.</p>
+      <button>اعثر على الأرخص</button>
+    </div>
+    <div class="card">
+      <h3>🧠 تحليل بالذكاء الاصطناعي</h3>
+      <p>نفهم المنتج ونقترح بدائل ذكية لك تلقائيًا.</p>
+      <button>تحليل ذكي</button>
+    </div>
+    <div class="card">
+      <h3>📈 Sniper Trend AI</h3>
+      <p>نتوقع المنتجات التي ستصبح ترند قبل الجميع.</p>
+      <button>ابدأ التنقيب</button>
+    </div>
+    <div class="card">
+      <h3>🤖 أتمتة الشراء</h3>
+      <p>نشتري لك المنتج تلقائيًا من أرخص متجر.</p>
+      <button>افعلها لي</button>
+    </div>
+  </div>
+</div>

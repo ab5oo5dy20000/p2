@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartPrice | شركة تصميم مواقع</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+      font-family: 'Cairo', sans-serif;
+      background-color: #0c0b14;
+    }
+
+    .hero-banner {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.95)), url("paner.jpg") center/cover no-repeat;
+      min-height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      color: #ffffff;
+    }
+
+    .hero-top {
+      width: 100%;
+      max-width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background: rgba(12, 11, 20, 0.85);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+    }
+
+    .logo img {
+      height: 48px;
+    }
+
+    .nav-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #e0e0ff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #a855f7;
+    }
+
+    .burger {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .burger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    .dropdown-box {
+      display: none;
+      position: absolute;
+      top: 70px;
+      right: 30px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      z-index: 2000;
+      padding: 20px;
+      min-width: 200px;
+      text-align: right;
+    }
+
+    .dropdown-box.active {
+      display: block;
+    }
+
+    .dropdown-box a {
+      display: block;
+      padding: 10px;
+      color: #1e1e2f;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+      border-bottom: 1px solid #eee;
+      transition: background 0.2s;
+    }
+
+    .dropdown-box a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-box a:hover {
+      background: #f3f4f6;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-banner">
+    <div class="hero-top">
+      <div class="logo">
+        <img src="logo_transparent.png" alt="SmartPrice Logo">
+      </div>
+
+      <div class="nav-container">
+        <div class="nav-links">
+          <a href="index.html">الرئيسية</a>
+        </div>
+      </div>
+
+      <div class="burger" onclick="toggleDropdown()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="dropdown-box" id="dropdownBox">
+      <a href="index.html" onclick="closeDropdown()">العودة للرئيسية</a>
+      <a href="#about" onclick="closeDropdown()">من نحن</a>
+      <a href="#contact" onclick="closeDropdown()">تواصل معنا</a>
+    </div>
+  </section>
+
+  <script>
+    function toggleDropdown() {
+      const box = document.getElementById('dropdownBox');
+      box.classList.toggle('active');
+    }
+
+    function closeDropdown() {
+      const box = document.getElementById('dropdownBox');
+      box.classList.remove('active');
+    }
+  </script>
+</body>
+</html>
