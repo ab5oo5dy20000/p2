@@ -1,0 +1,95 @@
+<!-- ✅ Burger Menu HTML -->
+<div class="burger-wrapper" id="burger-wrapper">
+  <div class="burger" onclick="toggleDropdown()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="dropdown-box" id="dropdownBox">
+    <a href="about.html" onclick="closeDropdown()">من نحن</a>
+    <a href="#services-section" onclick="closeDropdown()">الخدمات</a>
+    <a href="#faq-section" onclick="closeDropdown()">الأسئلة الشائعة</a>
+    <a href="#contact" onclick="closeDropdown()">تواصل معنا</a>
+  </div>
+</div>
+
+<!-- ✅ Burger Menu CSS -->
+<style>
+  .burger-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  .burger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+  }
+
+  .dropdown-box {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1500;
+    padding: 15px;
+    min-width: 200px;
+    text-align: right;
+    margin-top: 10px;
+  }
+
+  .dropdown-box.active {
+    display: block;
+  }
+
+  .dropdown-box a {
+    display: block;
+    padding: 10px;
+    color: #1e1e2f;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+  }
+
+  .dropdown-box a:last-child {
+    border-bottom: none;
+  }
+
+  .dropdown-box a:hover {
+    background: #f3f4f6;
+  }
+</style>
+
+<!-- ✅ Burger Menu JS -->
+<script>
+  function toggleDropdown() {
+    document.getElementById('dropdownBox').classList.toggle('active');
+  }
+
+  function closeDropdown() {
+    document.getElementById('dropdownBox').classList.remove('active');
+  }
+
+  // إغلاق عند الضغط خارج القائمة
+  window.addEventListener("click", function (e) {
+    const wrapper = document.getElementById("burger-wrapper");
+    if (!wrapper.contains(e.target)) {
+      closeDropdown();
+    }
+  });
+</script>

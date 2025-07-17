@@ -14,6 +14,7 @@
       font-family: 'Cairo', sans-serif;
       background-color: #0c0b14;
       color: #ffffff;
+      scroll-behavior: smooth;
     }
 
     .hero-banner {
@@ -65,57 +66,6 @@
 
     .nav-links a:hover {
       color: #a855f7;
-    }
-
-    .burger {
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      z-index: 1100;
-    }
-
-    .burger div {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 4px 0;
-    }
-
-    .dropdown-box {
-      display: none;
-      position: absolute;
-      top: 70px;
-      right: 5vw;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      z-index: 2000;
-      padding: 20px;
-      min-width: 200px;
-      text-align: right;
-    }
-
-    .dropdown-box.active {
-      display: block;
-    }
-
-    .dropdown-box a {
-      display: block;
-      padding: 10px;
-      color: #1e1e2f;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 15px;
-      border-bottom: 1px solid #eee;
-      transition: background 0.2s;
-    }
-
-    .dropdown-box a:last-child {
-      border-bottom: none;
-    }
-
-    .dropdown-box a:hover {
-      background: #f3f4f6;
     }
 
     .hero-text {
@@ -257,24 +207,13 @@
 
       <div class="nav-container">
         <div class="nav-links">
-          <a href="#about">من نحن</a>
+          <a href="about.html">من نحن</a>
           <a href="#contact">تواصل معنا</a>
         </div>
       </div>
 
-      <div class="burger" onclick="toggleDropdown()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-
-    <!-- القائمة المنسدلة -->
-    <div class="dropdown-box" id="dropdownBox">
-      <a href="#about" onclick="closeDropdown()">من نحن</a>
-      <a href="#services-section" onclick="closeDropdown()">الخدمات</a>
-      <a href="#faq-section" onclick="closeDropdown()">الأسئلة الشائعة</a>
-      <a href="#contact" onclick="closeDropdown()">تواصل معنا</a>
+      <!-- ✅ استدعاء burger menu من ملف خارجي -->
+      <div id="burger-placeholder"></div>
     </div>
 
     <div class="hero-text">
@@ -295,14 +234,7 @@
     </div>
   </section>
 
-  <!-- استدعاء الأقسام -->
-  <div id="about"></div>
-  <script>
-    fetch("about.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("about").innerHTML = data);
-  </script>
-
+  <!-- الأقسام المستدعاه -->
   <div id="services-section"></div>
   <script>
     fetch("services.html")
@@ -331,16 +263,12 @@
     <a href="mailto:support@smartprice.com">support@smartprice.com</a>
   </footer>
 
+  <!-- ✅ سكربت تحميل burger menu -->
   <script>
-    function toggleDropdown() {
-      const box = document.getElementById('dropdownBox');
-      box.classList.toggle('active');
-    }
-
-    function closeDropdown() {
-      const box = document.getElementById('dropdownBox');
-      box.classList.remove('active');
-    }
+    fetch("burger-menu.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("burger-placeholder").innerHTML = data);
   </script>
+
 </body>
 </html>
