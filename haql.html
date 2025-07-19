@@ -1,0 +1,41 @@
+<!-- ✅ صندوق الترجمة الأبيض -->
+<div id="subtitles-box">
+  <div id="subtitles"></div>
+</div>
+
+<style>
+  /* ✅ حقل الترجمة الأبيض */
+  #subtitles-box {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    width: 260px;
+    height: 90vh;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 15px;
+    overflow-y: auto;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  /* ✅ نمط الجمل المترجمة */
+  #subtitles {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #1a1a2e;
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+  }
+
+  #subtitles span {
+    font-size: 15px;
+    background-color: #f1f1f1;
+    padding: 8px 10px;
+    border-radius: 10px;
+    color: #000;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    white-space: normal;
+  }
+</style>

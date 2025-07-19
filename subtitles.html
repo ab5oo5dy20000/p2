@@ -1,0 +1,58 @@
+<div id="subtitles">
+  <button id="clearSubtitlesBtn">🗑️ حذف الترجمة</button>
+</div>
+
+<style>
+  #subtitles {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 240px;
+    height: 100vh;
+    background: #ffffff;
+    color: #333;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 6px;
+    z-index: 9999;
+    direction: rtl;
+  }
+
+  #subtitles span {
+    font-size: 14px;
+    background-color: transparent;
+    padding: 4px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+    color: #111;
+    font-weight: normal;
+  }
+
+  #clearSubtitlesBtn {
+    background-color: #e11d48;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 8px;
+    width: 100%;
+    font-family: 'Cairo', sans-serif;
+  }
+
+  #clearSubtitlesBtn:hover {
+    background-color: #be123c;
+  }
+</style>
+
+<script>
+  // زر حذف الترجمة
+  document.getElementById('clearSubtitlesBtn').addEventListener('click', () => {
+    const subtitles = document.getElementById('subtitles');
+    Array.from(subtitles.querySelectorAll('span')).forEach(el => el.remove());
+  });
+</script>
